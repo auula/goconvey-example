@@ -15,22 +15,22 @@ func TestAdd(t *testing.T) {
 	Convey("两数相加测试，11 + 11 = 22 ？", t, func() {
 		x, y := 11, 11
 		// So 函数比较结果 ShouldEqual 是相等的意思
-		So(Operator["add"](x, y), ShouldEqual, 22)
+		So(Add(x,y), ShouldEqual, 22)
 	})
 }
 
 func TestSubtract(t *testing.T) {
 	Convey("测试两数相减，22 - 11 != 22 ？", t, func() {
 		x, y := 22, 11
-		// So 函数比较结果 ShouldEqual 是相等的意思
-		So(Operator["subtract"](x, y), ShouldNotEqual, 22)
+		// So 函数比较结果 ShouldNotEqual 是不相等的意思
+		So(Subtract(x,y), ShouldNotEqual, 22)
 	})
 }
 
 func TestMultiply(t *testing.T) {
 	Convey("将两数相乘，11 * 2 = 22 ？", t, func() {
 		x, y := 11, 2
-		So(Operator["multiply"](x, y), ShouldEqual, 22)
+		So(Multiply(x,y), ShouldEqual, 22)
 	})
 }
 
