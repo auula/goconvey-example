@@ -38,13 +38,14 @@ func TestDivision(t *testing.T) {
 	Convey("将两数相除", t, func() {
 		x, y := 10, 2
 		Convey("除以非 0 数", func() {
-
-			So(Operator["division"](x, y), ShouldEqual, 5)
+			n,_ := Division(x, y)
+			So(n, ShouldEqual, 5)
 		})
 
 		Convey("除以 0", func() {
 			y = 0
-			So(Operator["division"](x, y), ShouldNotBeNil)
+			_,err := Division(x, y)
+			So(err, ShouldNotBeNil)
 		})
 	})
 }

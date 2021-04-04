@@ -1,6 +1,8 @@
 package testing
 
-import "fmt"
+import(
+	"errors"
+)
 
 type OperatorType map[string]func(x, y int) (result int)
 
@@ -25,6 +27,21 @@ func init() {
 	}
 }
 
-func main() {
-	fmt.Println(Operator["add"](1, 2))
+func Add(x,y int) int {
+	return x + y
+}
+
+func  Subtract(x,y int) int {
+	return x - y
+}
+
+func Division(x,y int)(int,error){
+	if y == 0 {
+		return 0,errors.New("被除数不能为零")
+	}
+	return x / y,nil
+}
+
+func Multiply(x,y int) int{
+	return x * y
 }
